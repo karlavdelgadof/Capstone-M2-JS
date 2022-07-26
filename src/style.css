@@ -25,8 +25,6 @@ body {
   align-items: center;
   background-color: rgba(238, 238, 238, 0.626);
   background-blend-mode: soft-light;
-
-  /* background-image: url('./multimedia/bg.jpg'); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
