@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
 * {
-  /* font-family: 'Raleway', sans-serif; */
   text-decoration: none;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  border: 1px solid red;
+
+  /* outline: 2px solid red; */
   font-size: 20px;
 }
 
