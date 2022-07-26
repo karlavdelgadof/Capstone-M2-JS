@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
 * {
   /* font-family: 'Raleway', sans-serif; */
@@ -31,6 +32,7 @@ body {
   background-size: cover;
   backdrop-filter: blur(10px);
   position: relative;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 #page-header {
@@ -73,8 +75,8 @@ body {
 #page-footer {
   position: absolute;
   bottom: 0;
-  left:0;
-  width:100%;
+  left: 0;
+  width: 100%;
   text-align: center;
   background-color: var(--color-fourth);
   padding: 2% 8%;
