@@ -1,7 +1,71 @@
-body {
-  background-color: lightblue;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  /* font-family: 'Raleway', sans-serif; */
+  text-decoration: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 1px solid red;
+  font-size: 20px;
 }
 
-.hello {
-  color: purple;
+:root {
+  --color-primary: #ec6a5e;
+  --color-secondary: #fcb064;
+  --color-third: #7c58b0;
+  --color-fourth: #4eb0b1;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(238, 238, 238, 0.626);
+  background-blend-mode: soft-light;
+
+  /* background-image: url('./multimedia/bg.jpg'); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+#page-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2% 8%;
+  position: fixed;
+  background-color: var(--color-third);
+}
+
+#logo h1 {
+  font-family: 'Noto Sans Display', sans-serif;
+  font-size: 2rem;
+  color: white;
+}
+
+#navbar {
+  display: flex;
+}
+
+#nav-links {
+  display: flex;
+  gap: 1rem;
+  font-size: 2rem;
+}
+
+#nav-links li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+#nav-links li a {
+  text-decoration: none;
+  color: var(--color-fourth);
+  font-weight: bold;
 }
