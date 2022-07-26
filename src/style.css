@@ -14,7 +14,7 @@
 :root {
   --color-primary: #ec6a5e;
   --color-secondary: #fcb064;
-  --color-third: #7c58b0;
+  --color-third: #3a3e59;
   --color-fourth: #4eb0b1;
 }
 
@@ -40,6 +40,10 @@ body {
   padding: 2% 8%;
   position: fixed;
   background-color: var(--color-third);
+}
+
+#log-icon {
+  background-image: url('./wave.png');
 }
 
 #logo h1 {
@@ -79,4 +83,31 @@ body {
   background-color: var(--color-fourth);
   padding: 2% 8%;
   color: #fff;
+}
+
+#artist-list {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#list {
+  margin-top: 12rem;
+}
+
+.artist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.artist-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-info {
+  background-color: #4eb0b1;
+  display: flex;
 }
