@@ -69,3 +69,14 @@ body {
   color: var(--color-fourth);
   font-weight: bold;
 }
+
+#page-footer {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width:100%;
+  text-align: center;
+  background-color: var(--color-fourth);
+  padding: 2% 8%;
+  color: #fff;
+}
