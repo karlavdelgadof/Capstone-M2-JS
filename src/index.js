@@ -5,13 +5,15 @@ import './style.css';
 const artistList = document.getElementById('artist-list');
 const commentPopup = document.getElementById('comment_popup');
 const closeModal = document.getElementById('close-modal');
-console.log(closeModal);
 
-artistList.addEventListener('click', (e) => {
+artistList.addEventListener('click', async (e) => {
   if (e.target.className === 'comment') {
     // show popup window
     commentPopup.classList.remove('hide');
     commentPopup.classList.add('show');
+
+    //get artist bt id
+    const result =  await artistsAPI.getArtistById('art.44');
   }
 });
 
