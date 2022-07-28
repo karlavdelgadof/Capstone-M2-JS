@@ -12,7 +12,7 @@ const artistFacts = document.getElementById('artist-facts');
 console.log(artistFacts );
 
 artistList.addEventListener('click', async (e) => {
-  if (e.target.className === 'comment') {
+  if (e.target.className === 'more') {
     // clear out earlier values
     commetImage.src = '';
     commentPageTitle.textContent = '';
