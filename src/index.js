@@ -60,6 +60,9 @@ commentForm.addEventListener('submit', async (e) => {
 
 document.addEventListener('DOMContentLoaded', async () => {
   const artists = await artistsAPI.getArtist();
+<<<<<<< HEAD
   console.log(artists);
+=======
+>>>>>>> dev
   artists.forEach(createCard);
 });
