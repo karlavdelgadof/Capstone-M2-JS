@@ -10,10 +10,8 @@ const closeModal = document.getElementById('close-modal');
 const commetImage = document.getElementById('commet-image');
 const commentPageTitle = document.getElementById('comment-page-title');
 const artistFacts = document.getElementById('artist-facts');
-const commentForm = document.getElementById('comment-form');
 
 artistList.addEventListener('click', async (e) => {
-  console.log('here i am');
   if (e.target.className === 'more') {
     // clear out earlier values
     commetImage.src = '';
@@ -29,7 +27,6 @@ artistList.addEventListener('click', async (e) => {
     // get artist data
     const {
       type,
-      id,
       name,
       shortcut,
       bios: [{ author }],
@@ -37,9 +34,10 @@ artistList.addEventListener('click', async (e) => {
     // add image source
     commetImage.src = `https://api.napster.com/imageserver/v2/artists/${artistId}/images/356x237.jpg`;
     commentPageTitle.textContent = name;
-    commentForm.setAttribute('name', id);
+    // commentForm.setAttribute('name', id);
 
     // add artist facts
+
     CommentUI.addFacts(artistFacts, [type, name, shortcut, author]);
   }
 });
