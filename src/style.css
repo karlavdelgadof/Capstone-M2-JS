@@ -19,7 +19,7 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,7 +89,7 @@ body {
   left: 0;
   width: 100%;
   text-align: center;
-  background-color: var(--color-fourth);
+  background-color: #1c1e29;
   padding: 2% 8%;
   color: #fff;
 }
@@ -103,6 +103,15 @@ body {
 
 #list {
   margin-top: 12rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+#list h2 {
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .artist {
@@ -111,13 +120,15 @@ body {
   justify-content: center;
   text-align: center;
   background-color: #1c1e29;
-  padding: 0.8rem 0.8rem 2rem 0.8rem;
-  border-radius: 3%;
+  padding: 0.8rem 1rem 2rem;
+  border-radius: 10px 155px 10px 10px;
   color: #fff;
 }
 
 .artist-img {
-  box-shadow: 0 0 58px 3px rgba(250, 53, 150, 0.77);
+  /* box-shadow: 0 0 58px 3px rgba(250, 53, 150, 0.77); */
+  box-shadow: 0 0 80px -10px rgba(250, 52, 150, 1);
+  border-radius: 0 167px 10px 10px;
 }
 
 .artist-info {
@@ -130,6 +141,11 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 1rem;
+  font-size: 2.5rem;
+}
+
+.top-info h3 {
+  font-size: 1.3rem;
 }
 
 .fa-heart {
@@ -156,4 +172,16 @@ div.hide {
 
 div.show {
   display:flex;
+}
+.more {
+  width: 180px;
+  background-color: transparent;
+  border: none;
+  border: 2px solid #fa3496;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  align-items: flex-start;
+  font-family: inherit;
+  font-weight: 600;
+  color: #fa3496;
 }

@@ -49,6 +49,5 @@ closeModal.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', async () => {
   const artists = await artistsAPI.getArtist();
-  console.log(artists);
   artists.forEach(createCard);
 });
