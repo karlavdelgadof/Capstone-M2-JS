@@ -8,12 +8,24 @@ const closeModal = document.getElementById('close-modal');
 
 artistList.addEventListener('click', async (e) => {
   if (e.target.className === 'comment') {
+    // get artist id
+    const artistId = e.path[2].id;
+
     // show popup window
     commentPopup.classList.remove('hide');
     commentPopup.classList.add('show');
 
-    //get artist bt id
-    const result =  await artistsAPI.getArtistById('art.44');
+    // get artist data
+    const {
+      type,
+      id,
+      name,
+      shortcut,
+      bios: [{ author }],
+    } = await artistsAPI.getArtistById(artistId);
+    const source = `https://api.napster.com/imageserver/v2/artists/${artistId}/images/356x237.jpg`;
+
+    
   }
 });
 
