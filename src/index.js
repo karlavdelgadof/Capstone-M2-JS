@@ -1,5 +1,6 @@
 import artistsAPI from './modules/getArtistAPI';
 import createCard from './modules/homeUI';
+import CommentUI from './modules/commentUI.js';
 import Comment from './modules/comment.js';
 import './style.css';
 
@@ -9,7 +10,7 @@ const closeModal = document.getElementById('close-modal');
 const commetImage = document.getElementById('commet-image');
 const commentPageTitle = document.getElementById('comment-page-title');
 const artistFacts = document.getElementById('artist-facts');
-console.log(artistFacts );
+const commentForm = document.getElementById('comment-form');
 
 artistList.addEventListener('click', async (e) => {
   if (e.target.className === 'comment') {
@@ -35,9 +36,10 @@ artistList.addEventListener('click', async (e) => {
     // add image source
     commetImage.src = `https://api.napster.com/imageserver/v2/artists/${artistId}/images/356x237.jpg`;
     commentPageTitle.textContent = name;
+    commentForm.setAttribute('name', id);
 
-    //add artist facts
-    Comment.addFacts(artistFacts, [type, name, shortcut, author]);
+    // add artist facts
+    CommentUI.addFacts(artistFacts, [type, name, shortcut, author]);
   }
 });
 
@@ -45,6 +47,15 @@ closeModal.addEventListener('click', () => {
   // hide comment popup window
   commentPopup.classList.add('hide');
   commentPopup.classList.remove('show');
+});
+
+commentForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const name = commentForm.elements[0].value;
+  const message = commentForm.elements[1].value;
+  const artistId = commentForm.name;
+  const result = await Comment.getComments(artistId, name, message);
+  console.log(result);
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
