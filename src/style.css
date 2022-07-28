@@ -142,8 +142,9 @@ body {
   text-align: right;
 }
 
-
+/* comment pop up styles */
 .comment-popup {
+  margin-top:100px;
   min-height:500px;
   background-color: blue;
   width: 100%;

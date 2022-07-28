@@ -4,7 +4,8 @@ import './style.css';
 
 const artistList = document.getElementById('artist-list');
 const commentPopup = document.getElementById('comment_popup');
-console.log(commentPopup);
+const closeModal = document.getElementById('close-modal');
+console.log(closeModal);
 
 artistList.addEventListener('click', (e) => {
   if (e.target.className === 'comment') {
@@ -12,6 +13,12 @@ artistList.addEventListener('click', (e) => {
     commentPopup.classList.remove('hide');
     commentPopup.classList.add('show');
   }
+});
+
+closeModal.addEventListener('click', () => {
+  // hide comment popup window
+  commentPopup.classList.add('hide');
+  commentPopup.classList.remove('show');
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
