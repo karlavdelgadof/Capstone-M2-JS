@@ -5,9 +5,14 @@ import './style.css';
 const artistList = document.getElementById('artist-list');
 const commentPopup = document.getElementById('comment_popup');
 const closeModal = document.getElementById('close-modal');
+const commetImage = document.getElementById('commet-image');
+console.log(commetImage);
 
 artistList.addEventListener('click', async (e) => {
   if (e.target.className === 'comment') {
+    // clear out earlier values
+    commetImage.src = '';
+
     // get artist id
     const artistId = e.path[2].id;
 
@@ -23,9 +28,13 @@ artistList.addEventListener('click', async (e) => {
       shortcut,
       bios: [{ author }],
     } = await artistsAPI.getArtistById(artistId);
-    const source = `https://api.napster.com/imageserver/v2/artists/${artistId}/images/356x237.jpg`;
+    // add image source
+    commetImage.src = `https://api.napster.com/imageserver/v2/artists/${artistId}/images/356x237.jpg`;
 
-    
+    //
+   
+
+
   }
 });
 
