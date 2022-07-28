@@ -1,6 +1,7 @@
 import artistsAPI from './modules/getArtistAPI.js';
 import createCard from './modules/homeUI.js';
 import Comment from './modules/comment.js';
+
 import './style.css';
 
 const artistList = document.getElementById('artist-list');
