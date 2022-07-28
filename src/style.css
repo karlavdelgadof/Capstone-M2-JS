@@ -141,3 +141,18 @@ body {
   flex: 80%;
   text-align: right;
 }
+
+
+.comment-popup {
+  min-height:500px;
+  background-color: blue;
+  width: 100%;
+}
+
+div.hide {
+  display:none;
+}
+
+div.show {
+  display:flex;
+}
