@@ -10,6 +10,7 @@ const closeModal = document.getElementById('close-modal');
 const commetImage = document.getElementById('commet-image');
 const commentPageTitle = document.getElementById('comment-page-title');
 const artistFacts = document.getElementById('artist-facts');
+const commentForm = document.getElementById('comment-form');
 
 artistList.addEventListener('click', async (e) => {
   if (e.target.className === 'more') {
@@ -55,6 +56,8 @@ commentForm.addEventListener('submit', async (e) => {
   const artistId = commentForm.name;
   const result = await Comment.getComments(artistId, name, message);
   console.log(result);
+  commentForm.elements[0].value = '';
+  commentForm.elements[1].value = '';
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
