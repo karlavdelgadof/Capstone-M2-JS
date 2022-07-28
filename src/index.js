@@ -6,4 +6,3 @@ document.addEventListener('DOMContentLoaded', async () => {
   const artists = await artistsAPI.getArtist();
   artists.forEach(createCard);
 });
-
