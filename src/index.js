@@ -47,12 +47,7 @@ artistList.addEventListener('click', async (e) => {
     CommentUI.addFacts(artistFacts, [type, name, shortcut, author]);
     const result = await Comment.getComments(id);
 
-    let length = 0;
-    if (result.length) {
-      length = result.length;
-    }
-
-    commentCount.innerHTML = `Comments (${length})`;
+    commentCount.innerHTML = `Comments (${Comment.commentCounter(result)})`;
 
     if (result.length > 0) {
       result.forEach((comment) => CommentUI.showComments(commentList, comment));

@@ -3,7 +3,7 @@ const artistsList = document.getElementById('artist-list');
 const createCard = (artist) => {
   const artistCard = document.createElement('div');
   artistCard.className = 'artist';
-  artistCard.setAttribute('id', artist.id)
+  artistCard.setAttribute('id', artist.id
   artistsList.appendChild(artistCard);
 
   const artistImg = document.createElement('img');
