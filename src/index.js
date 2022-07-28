@@ -11,6 +11,7 @@ const commetImage = document.getElementById('commet-image');
 const commentPageTitle = document.getElementById('comment-page-title');
 const artistFacts = document.getElementById('artist-facts');
 const commentForm = document.getElementById('comment-form');
+const commentList = document.getElementById('display-comments');
 
 artistList.addEventListener('click', async (e) => {
   if (e.target.className === 'comment') {
@@ -40,6 +41,11 @@ artistList.addEventListener('click', async (e) => {
 
     // add artist facts
     CommentUI.addFacts(artistFacts, [type, name, shortcut, author]);
+
+    const result = await Comment.getComments(id);
+    if (result.length > 0) {
+      result.forEach((comment) => CommentUI.showComments(commentList, comment));
+    }
   }
 });
 
@@ -54,12 +60,10 @@ commentForm.addEventListener('submit', async (e) => {
   const name = commentForm.elements[0].value;
   const message = commentForm.elements[1].value;
   const artistId = commentForm.name;
-  const result = await Comment.getComments(artistId, name, message);
-  console.log(result);
+  const result = await Comment.postComments(artistId, name, message);
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
   const artists = await artistsAPI.getArtist();
-  console.log(artists);
   artists.forEach(createCard);
 });
