@@ -4,6 +4,6 @@ import './style.css';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const artists = await artistsAPI.getArtist();
-  console.log(artists)
-  artists.forEach(createCard)
+  console.log(artists);
+  artists.forEach(createCard);
 });
