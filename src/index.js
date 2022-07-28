@@ -12,12 +12,16 @@ const commentPageTitle = document.getElementById('comment-page-title');
 const artistFacts = document.getElementById('artist-facts');
 const commentForm = document.getElementById('comment-form');
 const commentList = document.getElementById('display-comments');
+const commentCount = document.getElementById('commets-count');
+console.log(commentCount);
 
 artistList.addEventListener('click', async (e) => {
   if (e.target.className === 'comment') {
     // clear out earlier values
     commetImage.src = '';
     commentPageTitle.textContent = '';
+    commentCount.innerHTML = '';
+    commentList.innerHTML = '';
 
     // get artist id
     const artistId = e.path[2].id;
@@ -41,8 +45,15 @@ artistList.addEventListener('click', async (e) => {
 
     // add artist facts
     CommentUI.addFacts(artistFacts, [type, name, shortcut, author]);
-
     const result = await Comment.getComments(id);
+
+    let length = 0;
+    if (result.length) {
+      length = result.length;
+    }
+
+    commentCount.innerHTML = `Comments (${length})`;
+
     if (result.length > 0) {
       result.forEach((comment) => CommentUI.showComments(commentList, comment));
     }
