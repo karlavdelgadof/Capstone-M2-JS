@@ -13,7 +13,8 @@ const artistFacts = document.getElementById('artist-facts');
 const commentForm = document.getElementById('comment-form');
 
 artistList.addEventListener('click', async (e) => {
-  if (e.target.className === 'comment') {
+  console.log('here i am');
+  if (e.target.className === 'more') {
     // clear out earlier values
     commetImage.src = '';
     commentPageTitle.textContent = '';
