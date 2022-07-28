@@ -1,5 +1,7 @@
 export default class Comment {
   static addFacts = async (parentElement, facts) => {
+    // clear old entries
+    parentElement.innerHTML = '';
     const fact1 = document.createElement('p'); // [type, name, shortcut, author]
     fact1.textContent = `Name: ${facts[1]}`;
     const fact2 = document.createElement('p');
