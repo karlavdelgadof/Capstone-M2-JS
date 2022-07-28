@@ -27,6 +27,10 @@ const createCard = (artist) => {
   likesIcon.classList.add('fa-solid', 'fa-heart');
   topInfo.appendChild(likesIcon);
 
+  likesIcon.addEventListener('click', () => {
+    likesIcon.classList.toggle('liked');
+  })
+  
   const likesCount = document.createElement('span');
   likesCount.className = 'likes';
   likesCount.textContent = artist.likes;

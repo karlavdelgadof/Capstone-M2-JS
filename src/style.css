@@ -150,7 +150,12 @@ body {
 
 .fa-heart {
   justify-self: end;
-  font-size: 25px;
+  font-size: 27px;
+  cursor: pointer;
+}
+
+.fa-heart.liked {
+  color: #fcb424;
 }
 
 .likes {
