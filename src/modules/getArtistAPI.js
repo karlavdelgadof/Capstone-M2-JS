@@ -24,7 +24,6 @@ export default class artistsAPI {
       },
     );
     const data = await response.json();
-    console.log(data.artists);
     return data.artists[0];
   };
 }

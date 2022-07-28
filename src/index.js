@@ -1,5 +1,5 @@
-import artistsAPI from './modules/getArtistAPI';
-import createCard from './modules/homeUI';
+import artistsAPI from './modules/getArtistAPI.js';
+import createCard from './modules/homeUI.js';
 import Comment from './modules/comment.js';
 import './style.css';
 
@@ -9,7 +9,6 @@ const closeModal = document.getElementById('close-modal');
 const commetImage = document.getElementById('commet-image');
 const commentPageTitle = document.getElementById('comment-page-title');
 const artistFacts = document.getElementById('artist-facts');
-console.log(artistFacts );
 
 artistList.addEventListener('click', async (e) => {
   if (e.target.className === 'more') {
@@ -27,7 +26,6 @@ artistList.addEventListener('click', async (e) => {
     // get artist data
     const {
       type,
-      id,
       name,
       shortcut,
       bios: [{ author }],
@@ -36,7 +34,7 @@ artistList.addEventListener('click', async (e) => {
     commetImage.src = `https://api.napster.com/imageserver/v2/artists/${artistId}/images/356x237.jpg`;
     commentPageTitle.textContent = name;
 
-    //add artist facts
+    // add artist facts
     Comment.addFacts(artistFacts, [type, name, shortcut, author]);
   }
 });
