@@ -33,16 +33,10 @@ const createCard = (artist) => {
   topInfo.appendChild(likesCount);
 
   const commentBtn = document.createElement('button');
-  commentBtn.className = 'comment';
+  commentBtn.className = 'more';
   commentBtn.setAttribute('type', 'button');
-  commentBtn.textContent = 'Comments';
+  commentBtn.textContent = '+ More';
   artistInfo.appendChild(commentBtn);
-
-  const reservationBtn = document.createElement('button');
-  reservationBtn.className = 'reservation';
-  reservationBtn.setAttribute('type', 'button');
-  reservationBtn.textContent = 'Reservation'
-  artistInfo.appendChild(reservationBtn);
 }
 
 export default createCard
