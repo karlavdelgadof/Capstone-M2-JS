@@ -170,6 +170,22 @@ body {
   text-align: right;
 }
 
+/* comment pop up styles */
+.comment-popup {
+  margin-top: 100px;
+  height: 100vh;
+  background-color: blue;
+  width: 100%;
+}
+
+div.hide {
+  display: none;
+}
+
+div.show {
+  display: flex;
+}
+
 .more {
   width: 180px;
   background-color: transparent;
