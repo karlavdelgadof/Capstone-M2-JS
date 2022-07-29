@@ -31,6 +31,6 @@ export default class Comment {
       },
     );
     const data = await response.text();
-    return data;
+    return JSON.parse(data);
   };
 }

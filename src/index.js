@@ -15,6 +15,7 @@ artistList.addEventListener('click', async (e) => {
     const commetImage = document.getElementById('commet-image');
     const commentPageTitle = document.getElementById('comment-page-title');
     const artistFacts = document.getElementById('artist-facts');
+    const commentList = document.getElementById('display-comments');
     commetImage.src = '';
     commentPageTitle.textContent = '';
     const artistId = e.path[2].id;
@@ -22,6 +23,7 @@ artistList.addEventListener('click', async (e) => {
     commentPopup.classList.add('show');
     const {
       type,
+      id,
       name,
       shortcut,
       bios: [{ author }],
