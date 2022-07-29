@@ -12,7 +12,7 @@ export default class Comment {
           username,
           comment,
         }),
-      }
+      },
     );
     const data = await response.json();
     return data;
@@ -27,7 +27,7 @@ export default class Comment {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
-      }
+      },
     );
     const data = await response.text();
     return JSON.parse(data);

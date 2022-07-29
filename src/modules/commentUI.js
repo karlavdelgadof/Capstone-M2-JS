@@ -21,7 +21,7 @@ export default class CommentUI {
 
   static showComments = (
     ele,
-    { creation_date: date, comment: message, username: name }
+    { creation_date: date, comment: message, username: name },
   ) => {
     const {
       creation_date: creationDate,
