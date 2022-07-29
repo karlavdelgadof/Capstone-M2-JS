@@ -1,23 +1,23 @@
-import artistsAPI from './modules/getArtistAPI';
-import createCard from './modules/homeUI';
+import artistsAPI from './modules/getArtistAPI.js';
+import createCard from './modules/homeUI.js';
 import CommentUI from './modules/commentUI.js';
 import Comment from './modules/comment.js';
+import modalWindow from './modules/modal.js';
 import './style.css';
 
-const artistList = document.getElementById('artist-list');
 const commentPopup = document.getElementById('comment_popup');
-const closeModal = document.getElementById('close-modal');
-const commetImage = document.getElementById('commet-image');
-const commentPageTitle = document.getElementById('comment-page-title');
-const artistFacts = document.getElementById('artist-facts');
-const commentForm = document.getElementById('comment-form');
-const commentList = document.getElementById('display-comments');
-const commentCount = document.getElementById('commets-count');
-console.log(commentCount);
+const artistList = document.getElementById('artist-list');
 
 artistList.addEventListener('click', async (e) => {
-  if (e.target.className === 'comment') {
-    // clear out earlier values
+  const artistId = e.target.parentElement.parentElement.id;
+  commentPopup.innerHTML = '';
+  commentPopup.appendChild(modalWindow(artistId));
+  if (e.target.className === 'more') {
+    const commetImage = document.getElementById('commet-image');
+    const commentPageTitle = document.getElementById('comment-page-title');
+    const artistFacts = document.getElementById('artist-facts');
+    const commentList = document.getElementById('display-comments');
+    const commentCount = document.getElementById('commets-count');
     commetImage.src = '';
     commentPageTitle.textContent = '';
     commentCount.innerHTML = '';
@@ -25,12 +25,8 @@ artistList.addEventListener('click', async (e) => {
 
     // get artist id
     const artistId = e.path[2].id;
-
-    // show popup window
     commentPopup.classList.remove('hide');
     commentPopup.classList.add('show');
-
-    // get artist data
     const {
       type,
       id,
@@ -38,12 +34,8 @@ artistList.addEventListener('click', async (e) => {
       shortcut,
       bios: [{ author }],
     } = await artistsAPI.getArtistById(artistId);
-    // add image source
     commetImage.src = `https://api.napster.com/imageserver/v2/artists/${artistId}/images/356x237.jpg`;
     commentPageTitle.textContent = name;
-    commentForm.setAttribute('name', id);
-
-    // add artist facts
     CommentUI.addFacts(artistFacts, [type, name, shortcut, author]);
     const result = await Comment.getComments(id);
 
@@ -55,18 +47,22 @@ artistList.addEventListener('click', async (e) => {
   }
 });
 
-closeModal.addEventListener('click', () => {
-  // hide comment popup window
-  commentPopup.classList.add('hide');
-  commentPopup.classList.remove('show');
+commentPopup.addEventListener('click', (e) => {
+  if (e.target.id === 'close-modal') {
+    commentPopup.classList.add('hide');
+    commentPopup.classList.remove('show');
+  }
 });
 
-commentForm.addEventListener('submit', async (e) => {
+commentPopup.addEventListener('submit', async (e) => {
   e.preventDefault();
+  const commentForm = e.target;
   const name = commentForm.elements[0].value;
   const message = commentForm.elements[1].value;
-  const artistId = commentForm.name;
-  const result = await Comment.postComments(artistId, name, message);
+  const artistId = commentForm.className;
+  commentForm.elements[0].value = '';
+  commentForm.elements[1].value = '';
+  Comment.postComments(artistId, name, message);
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
