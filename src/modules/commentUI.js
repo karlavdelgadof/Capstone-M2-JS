@@ -30,7 +30,7 @@ export default class CommentUI {
     } = { creation_date: date, comment: message, username: name };
     const comEl = document.createElement('p');
     comEl.innerText = `${creationDate} ${username} ${comment} `;
-    //console.log(comEl);
+    // console.log(comEl);
     ele.appendChild(comEl);
     return comEl;
   };

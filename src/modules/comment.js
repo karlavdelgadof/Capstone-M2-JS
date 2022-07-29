@@ -12,7 +12,7 @@ export default class Comment {
           username,
           comment,
         }),
-      }
+      },
     );
     const data = await response.json();
     return data;

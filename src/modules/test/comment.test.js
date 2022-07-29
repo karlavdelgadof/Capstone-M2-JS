@@ -1,4 +1,4 @@
-import Comment from '../comment.js';
+// import Comment from '../comment.js';
 
 // describe('Test the count comments method', () => {
 //   const comments = [
