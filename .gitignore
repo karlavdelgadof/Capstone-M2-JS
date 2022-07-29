@@ -7,3 +7,5 @@ coverage
 .vscode/
 
 codekeep.htm
+
+modules/test/
