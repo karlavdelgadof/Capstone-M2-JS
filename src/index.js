@@ -49,11 +49,9 @@ commentPopup.addEventListener('submit', async (e) => {
   commentForm.elements[1].value = '';
   const result = await Comment.getComments(artistId, name, message);
   // console.log(result);
-
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
   const artists = await artistsAPI.getArtist();
   artists.forEach(createCard);
-  // commentPopup.appendChild(modalWindow());
 });
