@@ -60,15 +60,20 @@ const mainTitle = (tag, id) => {
 
 const createModal = (artistId) => {
   const commentWrapper = createDiv(['comment-wrapper']);
+
   const artistImage = createDiv(['artist-image']);
+  const grpImgh1 = createIdDiv('grpImgH1');
 
   const ImageTag = createImage();
+  const h1Title = mainTitle('h1', 'comment-page-title');
+
+  grpImgh1.appendChild(ImageTag);
+  grpImgh1.appendChild(h1Title);
+
   const modalBtn = createModalBtn();
 
-  artistImage.appendChild(ImageTag);
+  artistImage.appendChild(grpImgh1);
   artistImage.appendChild(modalBtn);
-
-  const h1Title = mainTitle('h1', 'comment-page-title');
 
   const artistFact = createIdDiv('artist-facts');
 
@@ -79,7 +84,6 @@ const createModal = (artistId) => {
   const theForm = createForm(artistId);
 
   commentWrapper.appendChild(artistImage);
-  commentWrapper.appendChild(h1Title);
   commentWrapper.appendChild(artistFact);
   commentWrapper.appendChild(h2Title);
   commentWrapper.appendChild(displayComments);
