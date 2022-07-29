@@ -12,7 +12,7 @@ export default class Comment {
           username,
           comment,
         }),
-      },
+      }
     );
     const data = await response.json();
     return data;
@@ -20,15 +20,14 @@ export default class Comment {
 
   static getComments = async (artistId) => {
     const response = await fetch(
-      `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DDR3QxgE4QHuteJe2GL7/comments?item_id=${
-        artistId}`,
+      `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DDR3QxgE4QHuteJe2GL7/comments?item_id=${artistId}`,
       {
         method: 'GET',
         header: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
-      },
+      }
     );
     const data = await response.text();
     return JSON.parse(data);
@@ -37,5 +36,5 @@ export default class Comment {
   static commentCounter = (commentsArray) => {
     if (commentsArray.length) return commentsArray.length;
     return 0;
-  }
+  };
 }

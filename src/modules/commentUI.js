@@ -21,7 +21,7 @@ export default class CommentUI {
 
   static showComments = (
     ele,
-    { creation_date: date, comment: message, username: name },
+    { creation_date: date, comment: message, username: name }
   ) => {
     const {
       creation_date: creationDate,
@@ -33,5 +33,9 @@ export default class CommentUI {
     // console.log(comEl);
     ele.appendChild(comEl);
     return comEl;
+  };
+
+  static addComments = (ele, { creation_date: date, comment: message, username: name }) => {
+    this.showComments(ele, { creation_date: date, comment: message, username: name });
   };
 }
