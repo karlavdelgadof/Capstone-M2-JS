@@ -88,25 +88,3 @@ const createModal = () => {
 };
 
 export default createModal;
-
-/*
-<div class="commet-wrapper">
-            <!-- image & close button button div -->
-            <div class="artist-image">
-                <img id="commet-image" src=""/>
-                <button type="button" id="close-modal"> x </button>
-            </div>
-
-            <h1 id="comment-page-title"></h1>
-            <div id="artist-facts"></div>
-            <h2 id="commets-count"></h2>
-            <div id="display-comments"></div>
-            <form action="POST" id="comment-form">
-                <input type="text" placeholder="Your name" id="name-field">
-                <textarea placeholder="Type your comment here ..." id="textarea-field"></textarea>
-                <input type="submit" id="submit-comment" value="Submit"/>
-            </form>
-         </div>
-
-
-*/ 
