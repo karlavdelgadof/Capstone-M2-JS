@@ -54,6 +54,6 @@ commentPopup.addEventListener('submit', async (e) => {
 
 document.addEventListener('DOMContentLoaded', async () => {
   const artists = await artistsAPI.getArtist();
-  artistCount.textContent = `(${artists.length})`
+  artistCount.textContent = `(${artists.length})`;
   artists.forEach(createCard);
 });
