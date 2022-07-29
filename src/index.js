@@ -1,5 +1,5 @@
-import artistsAPI from './modules/getArtistAPI';
-import createCard from './modules/homeUI';
+import artistsAPI from './modules/getArtistAPI.js';
+import createCard from './modules/homeUI.js';
 import CommentUI from './modules/commentUI.js';
 import Comment from './modules/comment.js';
 import modalWindow from './modules/modal.js';
@@ -47,8 +47,7 @@ commentPopup.addEventListener('submit', async (e) => {
   const artistId = commentForm.className;
   commentForm.elements[0].value = '';
   commentForm.elements[1].value = '';
-  const result = await Comment.postComments(artistId, name, message);
-  console.log(result);
+  Comment.postComments(artistId, name, message);
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
