@@ -1,7 +1,7 @@
 export default class artistsAPI {
   static async getArtist() {
     const response = await fetch(
-      'https://api.napster.com/v2.2/artists/top?apikey=ZjA0ZmYxZmItOTI1Ni00YTdjLWEzMTYtMjAyZDc1OTc3NzBh&limit=30&offset=22',
+      'https://api.napster.com/v2.2/artists/top?apikey=ZjA0ZmYxZmItOTI1Ni00YTdjLWEzMTYtMjAyZDc1OTc3NzBh&limit=3&offset=22',
       {
         method: 'GET',
         headers: {
