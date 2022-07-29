@@ -64,6 +64,20 @@ commentPopup.addEventListener('submit', async (e) => {
   const artistId = commentForm.className;
   commentForm.elements[0].value = '';
   commentForm.elements[1].value = '';
+  const commentList = document.getElementById('display-comments');
+  const date = new Date();
+  const dateString = `${date.getFullYear()}-${
+    date.getMonth() + 1
+  }-${date.getDate()}`;
+
+  commentList.appendChild(
+    CommentUI.addComments(commentList, {
+      creation_date: dateString,
+      comment: message,
+      username: name,
+    }),
+  );
+
   Comment.postComments(artistId, name, message);
 });
 
