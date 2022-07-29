@@ -22,7 +22,7 @@ export default class InvolvementAPI {
     const likes = await InvolvementAPI.getLikes();
     const artistLikes = likes.filter((item) => item.item_id === id);
     if (artistLikes.length <= 0) {
-      return 0
+      return 0;
     }
     const nLikes = artistLikes[0].likes;
     return nLikes;
