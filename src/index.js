@@ -47,7 +47,7 @@ commentPopup.addEventListener('submit', async (e) => {
   const artistId = commentForm.className;
   commentForm.elements[0].value = '';
   commentForm.elements[1].value = '';
-  const result = await Comment.getComments(artistId, name, message);
+  const result = await Comment.postComments(artistId, name, message);
   // console.log(result);
 });
 

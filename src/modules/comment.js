@@ -1,5 +1,5 @@
 export default class Comment {
-  static getComments = async (artistId, username, comment) => {
+  static postComments = async (artistId, username, comment) => {
     const response = await fetch(
       'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DDR3QxgE4QHuteJe2GL7/comments',
       {
