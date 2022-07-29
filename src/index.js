@@ -5,6 +5,8 @@ import Comment from './modules/comment.js';
 import modalWindow from './modules/modal.js';
 import './style.css';
 
+const artistCount = document.getElementById('artist-counter');
+
 const commentPopup = document.getElementById('comment_popup');
 const artistList = document.getElementById('artist-list');
 
@@ -52,5 +54,6 @@ commentPopup.addEventListener('submit', async (e) => {
 
 document.addEventListener('DOMContentLoaded', async () => {
   const artists = await artistsAPI.getArtist();
+  artistCount.textContent = `(${artists.length})`
   artists.forEach(createCard);
 });

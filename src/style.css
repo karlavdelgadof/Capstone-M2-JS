@@ -82,6 +82,22 @@ body {
   text-decoration: none;
   color: var(--color-secondary);
   font-weight: bold;
+  font-size: 1.3rem;
+}
+
+#nav-links li + li + li a {
+  color: #fa3496;
+}
+
+#home-btn {
+  color: #fff;
+  display: flex;
+  gap: 0.3rem;
+  font-weight: 600;
+}
+
+#artist-counter {
+  order: 1;
 }
 
 #page-footer {
@@ -124,6 +140,7 @@ body {
   padding: 0.8rem 1rem 2rem;
   border-radius: 10px 155px 10px 10px;
   color: #fff;
+  width: 85%;
 }
 
 .artist-img {
@@ -186,15 +203,20 @@ div.show {
   display: flex;
 }
 
-.more {
-  width: 180px;
+.more,
+#subscribe-btn {
+  width: 120px;
   background-color: transparent;
   border: none;
   border: 2px solid #fa3496;
-  padding: 1rem 2rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 30px;
   align-items: flex-start;
   font-family: inherit;
   font-weight: 600;
   color: #fa3496;
+}
+
+#subscribe-btn {
+  width: 150px;
 }
