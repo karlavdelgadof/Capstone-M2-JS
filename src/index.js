@@ -10,6 +10,7 @@ const artistList = document.getElementById('artist-list');
 
 artistList.addEventListener('click', async (e) => {
   const artistId = e.target.parentElement.parentElement.id;
+  commentPopup.innerHTML = '';
   commentPopup.appendChild(modalWindow(artistId));
   if (e.target.className === 'more') {
     const commetImage = document.getElementById('commet-image');

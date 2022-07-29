@@ -164,6 +164,10 @@ body {
   height: 100vh;
   background-color: blue;
   width: 100%;
+  outline:2px solid red;
+  z-index:100;
+  position:absolute;
+  top:0;
 }
 
 div.hide {
