@@ -4,16 +4,15 @@ export default class Comment {
       'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/DDR3QxgE4QHuteJe2GL7/comments',
       {
         method: 'POST',
-        header: {
+        headers: {
           'Content-Type': 'application/json',
-          Accept: 'application/json',
         },
         body: JSON.stringify({
           item_id: artistId,
           username,
           comment,
         }),
-      }
+      },
     );
     const data = await response.json();
     return data;
@@ -31,8 +30,8 @@ export default class Comment {
         },
       },
     );
-    const data = await response.json();
-    return data;
+    const data = await response.text();
+    return JSON.parse(data);
   };
 
   static commentCounter = (commentsArray) => {
