@@ -22,8 +22,8 @@ artistList.addEventListener('click', async (e) => {
     const commentCount = document.getElementById('commets-count');
     commetImage.src = '';
     commentPageTitle.textContent = '';
-    commentCount.innerHTML = '';
-    commentList.innerHTML = '';
+    commentCount.textContent = '';
+    commentList.textContent = '';
 
     // get artist id
     const artistId = e.path[2].id;
