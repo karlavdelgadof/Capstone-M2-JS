@@ -161,22 +161,21 @@ body {
 /* comment pop up styles */
 .comment-popup {
   margin-top: 100px;
-  height: 100vh;
-  /* background-color: blue; */
+  height: calc(100vh - 50px);
   background-color: var(--color-third);
   width: 100%;
-  outline:2px solid red;
+  border-radius: 5px;
   margin: 10px 20px;
   position:absolute;
   top:0;
   z-index:2;
-  width:100vw;
+  width:90%;
   box-sizing: border-box;
   padding: 10px 20px;
 }
 
 .comment-wrapper {
-  outline:1px solid green;
+  outline:2px solid pink;
   border-radius: 5px;
   padding:5px 10px;
   width:100%;
@@ -190,14 +189,15 @@ body {
 
 #close-modal {
   all:unset;
-  height:30px;
-  width:30px;
+  height:40px;
+  width:40px;
   color:white;
   Cursor:pointer;
+  font-size: 2em;
 }
 
 .artist-image{
-  outline:1px solid red;
+  /* outline:1px solid red; */
   display:flex;
   flex-wrap: nowrap;
   justify-content: space-between;
