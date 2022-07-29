@@ -1,7 +1,8 @@
-const createForm = () => {
+const createForm = (artistId) => {
   const theForm = document.createElement('form');
   theForm.setAttribute('method', 'POST');
   theForm.setAttribute('id', 'comment-form');
+  theForm.className = artistId;
 
   const nameField = document.createElement('input');
   nameField.setAttribute('type', 'text');
@@ -57,7 +58,7 @@ const mainTitle = (tag, id) => {
   return header;
 };
 
-const createModal = () => {
+const createModal = (artistId) => {
   const commentWrapper = createDiv(['comment-wrapper']);
   const artistImage = createDiv(['artist-image']);
 
@@ -75,7 +76,7 @@ const createModal = () => {
 
   const displayComments = createIdDiv('display-comments');
 
-  const theForm = createForm();
+  const theForm = createForm(artistId);
 
   commentWrapper.appendChild(artistImage);
   commentWrapper.appendChild(h1Title);
