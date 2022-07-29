@@ -10,11 +10,13 @@ const artistList = document.getElementById('artist-list');
 
 artistList.addEventListener('click', async (e) => {
   const artistId = e.target.parentElement.parentElement.id;
+  commentPopup.innerHTML = '';
   commentPopup.appendChild(modalWindow(artistId));
   if (e.target.className === 'more') {
     const commetImage = document.getElementById('commet-image');
     const commentPageTitle = document.getElementById('comment-page-title');
     const artistFacts = document.getElementById('artist-facts');
+    const commentList = document.getElementById('display-comments');
     commetImage.src = '';
     commentPageTitle.textContent = '';
     const artistId = e.path[2].id;
@@ -22,6 +24,7 @@ artistList.addEventListener('click', async (e) => {
     commentPopup.classList.add('show');
     const {
       type,
+      id,
       name,
       shortcut,
       bios: [{ author }],
@@ -29,6 +32,11 @@ artistList.addEventListener('click', async (e) => {
     commetImage.src = `https://api.napster.com/imageserver/v2/artists/${artistId}/images/356x237.jpg`;
     commentPageTitle.textContent = name;
     CommentUI.addFacts(artistFacts, [type, name, shortcut, author]);
+
+    const result = await Comment.getComments(id);
+    if (result.length > 0) {
+      result.forEach((comment) => CommentUI.showComments(commentList, comment));
+    }
   }
 });
 

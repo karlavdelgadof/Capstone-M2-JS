@@ -172,10 +172,49 @@ body {
 
 /* comment pop up styles */
 .comment-popup {
-  margin-top: 100px;
-  height: 100vh;
-  background-color: blue;
+  height: calc(100vh - 50px);
+  background-color: var(--color-third);
+  border-radius: 5px;
+  margin: 10px 20px;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 90%;
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+
+.comment-wrapper {
+  outline: 2px solid pink;
+  border-radius: 5px;
+  padding: 5px 10px;
   width: 100%;
+}
+
+/* div grouping image & title */
+#grpImgH1 {
+  text-align: center;
+  color: white;
+}
+
+#close-modal {
+  all: unset;
+  height: 40px;
+  width: 40px;
+  color: white;
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.artist-image {
+  /* outline:1px solid red; */
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+#commet-image {
+  border-radius: 5px;
 }
 
 div.hide {

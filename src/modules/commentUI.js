@@ -18,4 +18,20 @@ export default class CommentUI {
 
     return parentElement;
   };
+
+  static showComments = (
+    ele,
+    { creation_date: date, comment: message, username: name },
+  ) => {
+    const {
+      creation_date: creationDate,
+      comment,
+      username,
+    } = { creation_date: date, comment: message, username: name };
+    const comEl = document.createElement('p');
+    comEl.innerText = `${creationDate} ${username} ${comment} `;
+    // console.log(comEl);
+    ele.appendChild(comEl);
+    return comEl;
+  };
 }
