@@ -188,6 +188,14 @@ body {
   color:white;
 }
 
+#close-modal {
+  all:unset;
+  height:30px;
+  width:30px;
+  color:white;
+  Cursor:pointer;
+}
+
 .artist-image{
   outline:1px solid red;
   display:flex;

@@ -48,7 +48,7 @@ const createModalBtn = () => {
   const modalBtn = document.createElement('button');
   modalBtn.setAttribute('type', 'button');
   modalBtn.setAttribute('id', 'close-modal');
-  modalBtn.textContent = 'X';
+  modalBtn.innerHTML = '&times;';
   return modalBtn;
 };
 
