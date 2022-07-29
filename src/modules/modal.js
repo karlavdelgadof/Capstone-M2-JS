@@ -46,7 +46,7 @@ const createImage = () => {
 const createModalBtn = () => {
   const modalBtn = document.createElement('button');
   modalBtn.setAttribute('type', 'button');
-  modalBtn.setAttribute('id', '');
+  modalBtn.setAttribute('id', 'close-modal');
   modalBtn.textContent = 'X';
   return modalBtn;
 };
