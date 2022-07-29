@@ -2,6 +2,7 @@ const createForm = (artistId) => {
   const theForm = document.createElement('form');
   theForm.setAttribute('method', 'POST');
   theForm.setAttribute('id', 'comment-form');
+  theForm.setAttribute('action', '#');
   theForm.className = artistId;
 
   const nameField = document.createElement('input');
