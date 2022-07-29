@@ -1,6 +1,8 @@
+import InvolvementAPI from "./createLike";
+
 const artistsList = document.getElementById('artist-list');
 
-const createCard = (artist) => {
+const createCard = async (artist) => {
   const artistCard = document.createElement('div');
   artistCard.className = 'artist';
   artistCard.setAttribute('id', artist.id);
@@ -23,24 +25,42 @@ const createCard = (artist) => {
   artistName.textContent = artist.name;
   topInfo.appendChild(artistName);
 
+  const likesCont = document.createElement('div')
+  likesCont.className = 'likes-container';
+  topInfo.appendChild(likesCont) 
+
   const likesIcon = document.createElement('i');
   likesIcon.classList.add('fa-solid', 'fa-heart');
-  topInfo.appendChild(likesIcon);
+  likesCont.appendChild(likesIcon);
+
+  let clicks = 0;
 
   likesIcon.addEventListener('click', () => {
-    likesIcon.classList.toggle('liked');
+    clicks += 1
+    likesIcon.classList.add('liked');
+    const isLiked = (num) => {
+      if (num % 2 != 0) {
+        InvolvementAPI.recordLike(artist.id)
+      } else {
+        likesIcon.classList.remove('liked');
+        InvolvementAPI.displayLikes(artist.id)
+      }
+    }
+    isLiked(clicks)
   })
   
   const likesCount = document.createElement('span');
   likesCount.className = 'likes';
-  likesCount.textContent = artist.likes;
-  topInfo.appendChild(likesCount);
+  likesCount.textContent = await InvolvementAPI.displayLikes(artist.id);
+  likesCont.appendChild(likesCount);
 
   const commentBtn = document.createElement('button');
   commentBtn.className = 'more';
   commentBtn.setAttribute('type', 'button');
   commentBtn.textContent = '+ More';
   artistInfo.appendChild(commentBtn);
+  
+  InvolvementAPI.getLikes()
 };
 
 export default createCard;
