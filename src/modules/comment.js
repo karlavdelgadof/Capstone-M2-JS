@@ -33,4 +33,9 @@ export default class Comment {
     const data = await response.text();
     return JSON.parse(data);
   };
+
+  static commentCounter = (commentsArray) => {
+    if (commentsArray.length) return commentsArray.length;
+    return 0;
+  }
 }
