@@ -14,7 +14,7 @@
 
 ## Live Demo :arrow_forward:
 
-[BeatVox App](https://raminka13.github.io/BooklistApp/)
+[BeatVox App](https://karlavdelgadof.github.io/Capstone-M2-JS/dist)
 
 ## Set Up Guide :page_facing_up: 
 
