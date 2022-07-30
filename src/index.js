@@ -9,6 +9,7 @@ const artistCount = document.getElementById('artist-counter');
 
 const commentPopup = document.getElementById('comment_popup');
 const artistList = document.getElementById('artist-list');
+const body = document.querySelector('body');
 
 artistList.addEventListener('click', async (e) => {
   const artistId = e.target.parentElement.parentElement.id;
@@ -52,7 +53,8 @@ artistList.addEventListener('click', async (e) => {
 commentPopup.addEventListener('click', (e) => {
   if (e.target.id === 'close-modal') {
     commentPopup.classList.add('hide');
-    commentPopup.classList.remove('show');
+    commentPopup.classList.remove('show')
+    body.classList.add('active');
   }
 });
 

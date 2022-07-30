@@ -32,6 +32,11 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+body.active {
+  height: 90vh;
+  overflow-y: hidden;
+}
+
 #page-header {
   display: flex;
   justify-content: space-between;
@@ -190,49 +195,98 @@ body {
 
 /* comment pop up styles */
 .comment-popup {
-  height: calc(100vh - 50px);
-  background-color: var(--color-third);
-  border-radius: 5px;
-  margin: 10px 20px;
+  min-height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  align-self: center;
+  background-color: #040506;
+  backdrop-filter: blur(20px);
+  opacity: 95%;
   position: absolute;
   top: 0;
   z-index: 2;
-  width: 90%;
-  box-sizing: border-box;
   padding: 10px 20px;
 }
 
 .comment-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.8rem;
+  color: var(--color-secondary);
+  background-color: #1c1e29;
   outline: 2px solid pink;
-  border-radius: 5px;
-  padding: 5px 10px;
-  width: 100%;
+  border-radius: 10px 10px 160px 10px;
+  padding: 1rem;
+  width: 40%;
+}
+
+#comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 60%;
 }
 
 /* div grouping image & title */
 #grpImgH1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   text-align: center;
   color: white;
+  order: 1;
+  width: 100%;
+}
+
+#comment-page-title {
+  font-size: 2rem;
 }
 
 #close-modal {
   all: unset;
   height: 40px;
-  width: 40px;
   color: white;
   cursor: pointer;
   font-size: 2em;
+  order: 0;
+  width: 90%;
+  text-align: end;
 }
 
 .artist-image {
-  /* outline:1px solid red; */
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  gap: 1.5rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+#artist-facts {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.8rem;
 }
 
 #commet-image {
   border-radius: 5px;
+  width: 85%;
+}
+
+#commets-count,
+#display-comments,
+#comment-form {
+  padding-left: 2.5rem;
+}
+
+#display-comments {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 80px;
 }
 
 div.hide {
@@ -244,7 +298,8 @@ div.show {
 }
 
 .more,
-#subscribe-btn {
+#subscribe-btn,
+#submit-comment {
   width: 120px;
   background-color: transparent;
   border: none;
@@ -255,8 +310,25 @@ div.show {
   font-family: inherit;
   font-weight: 600;
   color: var(--color-primary);
+  cursor: pointer;
 }
 
-#subscribe-btn {
+#subscribe-btn,
+#submit-comment {
   width: 120px;
+}
+
+#submit-comment {
+  color: var(--color-secondary);
+  background-image: linear-gradient(180deg, #dc0570, #fb66b0);
+}
+
+#name-field,
+#textarea-field {
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 0.8rem 1rem;
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  border-radius: 8px;
 }
