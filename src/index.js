@@ -51,10 +51,10 @@ artistList.addEventListener('click', async (e) => {
 });
 
 commentPopup.addEventListener('click', (e) => {
+  
   if (e.target.id === 'close-modal') {
     commentPopup.classList.add('hide');
-    commentPopup.classList.remove('show')
-    body.classList.add('active');
+    commentPopup.classList.remove('show');
   }
 });
 

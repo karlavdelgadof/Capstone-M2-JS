@@ -18,7 +18,6 @@
 }
 
 body {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,11 +29,6 @@ body {
   background-size: cover;
   backdrop-filter: blur(10px);
   font-family: 'Source Sans Pro', sans-serif;
-}
-
-body.active {
-  height: 90vh;
-  overflow-y: hidden;
 }
 
 #page-header {
@@ -195,20 +189,18 @@ body.active {
 
 /* comment pop up styles */
 .comment-popup {
-  min-height: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
+  position: absolute;
   align-self: center;
   background-color: #040506;
   backdrop-filter: blur(20px);
   opacity: 95%;
-  position: absolute;
-  top: 0;
   z-index: 2;
-  padding: 10px 20px;
+  padding-top: 5rem;
 }
 
 .comment-wrapper {
@@ -220,8 +212,11 @@ body.active {
   background-color: #1c1e29;
   outline: 2px solid pink;
   border-radius: 10px 10px 160px 10px;
-  padding: 1rem;
+  mix-blend-mode: screen;
+  padding: 1rem 1rem 4rem;
+  position: fixed;
   width: 40%;
+  box-shadow: 14px 16px 69px 7px rgba(250, 52, 150, 1);
 }
 
 #comment-form {
@@ -270,6 +265,9 @@ body.active {
   flex-direction: column;
   text-align: center;
   gap: 0.8rem;
+  background-color: #34384c;
+  margin: 0 2rem;
+  padding: 1rem 0;
 }
 
 #commet-image {
