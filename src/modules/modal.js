@@ -11,13 +11,13 @@ const createForm = (artistId) => {
   nameField.setAttribute('id', 'name-field');
 
   const textArea = document.createElement('textarea');
-  textArea.textContent = 'Add your comment here'
+  textArea.textContent = 'Add your comment here';
   textArea.setAttribute('id', 'textarea-field');
 
   const submitBtn = document.createElement('button');
   submitBtn.setAttribute('type', 'button');
   submitBtn.setAttribute('id', 'submit-comment');
-  submitBtn.textContent = 'Send'
+  submitBtn.textContent = 'Send';
 
   theForm.appendChild(nameField);
   theForm.appendChild(textArea);

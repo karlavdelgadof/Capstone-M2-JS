@@ -10,7 +10,6 @@ export default class CommentUI {
     const fact4 = document.createElement('p');
     fact4.textContent = `Author: ${facts[3]}`;
 
-
     parentElement.appendChild(fact1);
     parentElement.appendChild(fact3);
     parentElement.appendChild(fact4);
