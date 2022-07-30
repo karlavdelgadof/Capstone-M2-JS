@@ -33,10 +33,17 @@ const createCard = async (artist) => {
   likesIcon.classList.add('fa-solid', 'fa-heart');
   likesCont.appendChild(likesIcon);
 
+  const likesCount = document.createElement('span');
+  likesCount.className = 'likes';
+  likesCount.textContent = await InvolvementAPI.displayLikes(artist.id);
+  likesCont.appendChild(likesCount);
+
   let clicks = 0;
 
-  likesIcon.addEventListener('click', () => {
+  likesIcon.addEventListener('click', (e) => {
     clicks += 1;
+    const count = e.target.nextSibling.textContent;
+    e.target.nextSibling.textContent = +count + 1;
     likesIcon.classList.add('liked');
     const isLiked = (num) => {
       if (num % 2 !== 0) {
@@ -48,11 +55,6 @@ const createCard = async (artist) => {
     };
     isLiked(clicks);
   });
-
-  const likesCount = document.createElement('span');
-  likesCount.className = 'likes';
-  likesCount.textContent = await InvolvementAPI.displayLikes(artist.id);
-  likesCont.appendChild(likesCount);
 
   const commentBtn = document.createElement('button');
   commentBtn.className = 'more';
