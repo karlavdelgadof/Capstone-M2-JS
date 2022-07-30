@@ -12,10 +12,9 @@
 }
 
 :root {
-  --color-primary: #ec6a5e;
+  --color-primary: #fa3496;
   --color-secondary: #f6f6f6;
-  --color-third: #34384c;
-  --color-fourth: #4eb0b1;
+  --color-third: #1c1e29;
 }
 
 body {
@@ -40,7 +39,7 @@ body {
   padding: 2% 8%;
   position: fixed;
   background-color: #080a0e;
-  box-shadow: 25px 40px 214px -20px rgba(250, 52, 150, 1);
+  box-shadow: 25px 40px 214px -20px rgba(250, 52, 151, 0.507), 25px 40px 214px -20px rgba(250, 52, 151, 0.507);
 }
 
 #logo {
@@ -58,7 +57,7 @@ body {
 #logo h1 {
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 2rem;
-  color: white;
+  color: var(--color-secondary);
   font-style: italic;
 }
 
@@ -68,7 +67,7 @@ body {
 
 #nav-links {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   font-size: 2rem;
 }
 
@@ -86,7 +85,7 @@ body {
 }
 
 #nav-links li + li + li a {
-  color: #fa3496;
+  color: var(--color-primary);
   font-size: 1rem;
 }
 
@@ -100,6 +99,7 @@ body {
 #artist-counter {
   order: 1;
   font-size: 1.3rem;
+  color: var(--color-primary);
 }
 
 #page-footer {
@@ -108,7 +108,7 @@ body {
   left: 0;
   width: 100%;
   text-align: center;
-  background-color: #1c1e29;
+  background-color: var(--color-third);
   padding: 2% 8%;
   color: #fff;
 }
@@ -128,7 +128,7 @@ body {
 }
 
 #list h2 {
-  color: #fff;
+  color: var(--color-secondary);
   font-size: 2.5rem;
   font-family: 'Montserrat Alternates', sans-serif;
 }
@@ -140,13 +140,13 @@ body {
   text-align: center;
   background-color: #1c1e29;
   padding: 0.8rem 1rem 2rem;
-  border-radius: 10px 155px 10px 10px;
-  color: #fff;
+  border-radius: 10px 160px 10px 10px;
+  color: var(--color-secondary);
   width: 85%;
 }
 
 .artist-img {
-  box-shadow: 0 0 80px -10px rgba(250, 52, 150, 1);
+  box-shadow: 0 0 80px -10px var(--color-primary);
   border-radius: 0 167px 10px 10px;
 }
 
@@ -248,13 +248,13 @@ div.show {
   width: 120px;
   background-color: transparent;
   border: none;
-  border: 2px solid #fa3496;
+  border: 2px solid var(--color-primary);
   padding: 0.5rem 0.8rem;
   border-radius: 30px;
   align-items: flex-start;
   font-family: inherit;
   font-weight: 600;
-  color: #fa3496;
+  color: var(--color-primary);
 }
 
 #subscribe-btn {
