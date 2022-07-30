@@ -58,6 +58,10 @@ commentPopup.addEventListener('click', (e) => {
 
 commentPopup.addEventListener('submit', async (e) => {
   e.preventDefault();
+  const commentsCounts = document.getElementById('commets-count');
+  let commentNumber = commentsCounts.innerText.substring(10, 12);
+  document.getElementById('commets-count').innerText = `Comments (${+commentNumber + 1})`;
+
   const commentForm = e.target;
   const name = commentForm.elements[0].value;
   const message = commentForm.elements[1].value;
