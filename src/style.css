@@ -22,6 +22,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   background-image: linear-gradient(180deg, #040506, #0c0d12, #1c1e29, #34384c);
   background-blend-mode: soft-light;
@@ -29,7 +30,6 @@ body {
   background-position: center;
   background-size: cover;
   backdrop-filter: blur(10px);
-  position: relative;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -39,8 +39,8 @@ body {
   width: 100%;
   padding: 2% 8%;
   position: fixed;
-  background-color: #0c0d12;
-  box-shadow: 25px 40px 214px -40px rgba(255, 255, 255, 1);
+  background-color: #080a0e;
+  box-shadow: 25px 40px 214px -20px rgba(250, 52, 150, 1);
 }
 
 #logo {
@@ -87,6 +87,7 @@ body {
 
 #nav-links li + li + li a {
   color: #fa3496;
+  font-size: 1rem;
 }
 
 #home-btn {
@@ -98,6 +99,7 @@ body {
 
 #artist-counter {
   order: 1;
+  font-size: 1.3rem;
 }
 
 #page-footer {
@@ -119,7 +121,7 @@ body {
 }
 
 #list {
-  margin-top: 12rem;
+  margin: 15rem 0 8rem;
   display: flex;
   flex-direction: column;
   gap: 5rem;
@@ -144,7 +146,6 @@ body {
 }
 
 .artist-img {
-  /* box-shadow: 0 0 58px 3px rgba(250, 53, 150, 0.77); */
   box-shadow: 0 0 80px -10px rgba(250, 52, 150, 1);
   border-radius: 0 167px 10px 10px;
 }
@@ -257,5 +258,5 @@ div.show {
 }
 
 #subscribe-btn {
-  width: 150px;
+  width: 120px;
 }
