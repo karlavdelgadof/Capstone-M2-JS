@@ -7,17 +7,17 @@ const createForm = (artistId) => {
 
   const nameField = document.createElement('input');
   nameField.setAttribute('type', 'text');
-  nameField.setAttribute('placeholder', 'Your name ...');
+  nameField.setAttribute('value', 'Your name');
   nameField.setAttribute('id', 'name-field');
 
   const textArea = document.createElement('textarea');
-  textArea.setAttribute('placeholder', 'Type your comment here ...');
+  textArea.textContent = 'Add your comment here';
   textArea.setAttribute('id', 'textarea-field');
 
-  const submitBtn = document.createElement('input');
-  submitBtn.setAttribute('type', 'submit');
+  const submitBtn = document.createElement('button');
+  submitBtn.setAttribute('type', 'button');
   submitBtn.setAttribute('id', 'submit-comment');
-  submitBtn.setAttribute('value', 'Submit');
+  submitBtn.textContent = 'Send';
 
   theForm.appendChild(nameField);
   theForm.appendChild(textArea);

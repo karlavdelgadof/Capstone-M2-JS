@@ -2,7 +2,7 @@
 node_modules/
 
 #Ignore coverage folder
-coverage 
+coverage/ 
 
 .vscode/
 
