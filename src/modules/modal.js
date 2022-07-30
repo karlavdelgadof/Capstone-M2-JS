@@ -14,10 +14,10 @@ const createForm = (artistId) => {
   textArea.textContent = 'Add your comment here';
   textArea.setAttribute('id', 'textarea-field');
 
-  const submitBtn = document.createElement('button');
-  submitBtn.setAttribute('type', 'button');
+  const submitBtn = document.createElement('input');
+  submitBtn.setAttribute('type', 'submit');
   submitBtn.setAttribute('id', 'submit-comment');
-  submitBtn.textContent = 'Send';
+  submitBtn.setAttribute('value', 'Send');
 
   theForm.appendChild(nameField);
   theForm.appendChild(textArea);
