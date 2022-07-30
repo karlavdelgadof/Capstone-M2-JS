@@ -3,6 +3,8 @@
 # Capstone M2: Music App
 > This project is a Web application based on the music API [Napster](https://developer.prod.napster.com/api/v2.2#images-apis) built with ES6, HTML and CSS and it is a SPA. This API provides data about music (including artists, albums, etc) that users can access on-demand.
 
+![](./app-home.png)
+
 
 ## Built With :hammer_and_wrench: 
 
