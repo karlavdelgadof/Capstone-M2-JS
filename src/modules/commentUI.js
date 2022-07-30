@@ -30,7 +30,12 @@ export default class CommentUI {
     return comEl;
   };
 
-  static addComments = (ele, { creation_date: date, comment: message, username: name }) => {
-    return this.showComments(ele, { creation_date: date, comment: message, username: name });
-  };
+  static addComments = (
+    ele,
+    { creation_date: date, comment: message, username: name },
+  ) => this.showComments(ele, {
+    creation_date: date,
+    comment: message,
+    username: name,
+  });
 }
