@@ -122,14 +122,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  width:95%;
+  width: 95%;
 }
 
 #list h2 {
   color: var(--color-secondary);
   font-size: 2.5rem;
   font-family: 'Montserrat Alternates', sans-serif;
-  width:90%;
+  width: 90%;
 }
 
 .artist {
