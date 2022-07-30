@@ -56,11 +56,6 @@ const createCard = async (artist) => {
     isLiked(clicks);
   });
 
-  // const likesCount = document.createElement('span');
-  // likesCount.className = 'likes';
-  // likesCount.textContent = await InvolvementAPI.displayLikes(artist.id);
-  // likesCont.appendChild(likesCount);
-
   const commentBtn = document.createElement('button');
   commentBtn.className = 'more';
   commentBtn.setAttribute('type', 'button');

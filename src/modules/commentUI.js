@@ -1,8 +1,6 @@
 export default class CommentUI {
   static addFacts = async (parentElement, facts) => {
-    // clear old entries
     parentElement.innerHTML = '';
-    // [type, shortcut, author]
     const fact1 = document.createElement('p');
     fact1.textContent = `Type: ${facts[0]}`;
     const fact3 = document.createElement('p');
@@ -28,7 +26,6 @@ export default class CommentUI {
     } = { creation_date: date, comment: message, username: name };
     const comEl = document.createElement('p');
     comEl.innerText = `${creationDate} ${username} ${comment} `;
-    // console.log(comEl);
     ele.appendChild(comEl);
     return comEl;
   };
