@@ -3,9 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpack Exercise</title>
+    <link rel="shortcut icon" href="./src/favicon-32x32.png" type="image/x-icon" />
+    <script src="https://kit.fontawesome.com/7a892cb0b1.js" crossorigin="anonymous"></script> 
+    <title>BeatVox</title>
 </head>
 <body>
-    <h1>Hello webpack!</h1>
+    <!-- comment pop up -->
+    <div class="comment-popup hide" id="comment_popup"></div>
+    <!-- home page -->
+    <header id="page-header">
+        <div id="logo">
+            <div id="log-icon"></div>
+            <h1>BeatVox</h1>
+        </div>
+        <nav id="navbar">
+            <ul id="nav-links">
+                <li id="home-btn"><span id="artist-counter"></span><a href="#home">Home</a></li>
+                <li id="search-btn"><a href="#search">Search</a></li>
+                <li id="subscribe-btn"><a href="#subscribe">Subscribe</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="list" class="show">
+        <h2>Choose your beat</h2>
+        <div id="artist-list"></div>
+    </section>
+    <footer id="page-footer">
+        <p>Created by Karla Delgado & Francis Wayungi. &copy; Copyright 2022</p>
+    </footer>
 </body>
 </html>
