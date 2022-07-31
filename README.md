@@ -18,7 +18,7 @@
 
 [BeatVox App](https://karlavdelgadof.github.io/Capstone-M2-JS/dist)
 
-## Presentation video link:
+**Presentation video link**
 [Team project presentation](https://drive.google.com/file/d/12CNcQwnGTpxRR0-b8-j1QxFcF7ZQf-cA/view?usp=sharing)
 
 ## Set Up Guide :page_facing_up: 
